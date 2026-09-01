@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "langflow-docs",
+  "displayName": "Langflow 1.11.x Docs",
+  "description": "Search the bundled Langflow 1.11.x documentation offline and cite exact pages. Covers components, flows, agents, tool mode, the Langflow API, environment variables, authentication, deployment, MCP, and bundles, plus hand-written notes on writing custom Python components and custom Agent tools. Pinned to 1.11.x, so it does not drift to a version you are not running.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Xilin",
+    "url": "https://github.com/x1linwang"
+  },
+  "homepage": "https://github.com/x1linwang/langflow-docs-skill",
+  "repository": "https://github.com/x1linwang/langflow-docs-skill",
+  "license": "MIT",
+  "keywords": [
+    "langflow",
+    "documentation",
+    "offline-docs",
+    "custom-components",
+    "agents",
+    "tool-mode",
+    "search"
+  ]
+}

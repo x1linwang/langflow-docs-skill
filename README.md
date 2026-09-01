@@ -14,6 +14,10 @@ cost me the most time and that the official documentation does not state.
 > Langflow project. It bundles Langflow's documentation, which is MIT licensed,
 > but the packaging, the search tool, and the hand-written notes are mine.
 >
+> The `/plugin marketplace add` below points at a marketplace self-hosted from
+> this repository — it is my own catalogue, not Anthropic's official or community
+> marketplace.
+>
 > It is a work in progress and will keep changing. If you try it and something
 > is wrong, missing, or misleading, please open an issue — bug reports and
 > corrections are genuinely welcome, especially on the hand-written notes, where
@@ -36,15 +40,41 @@ search before answering.
 
 ## Install
 
+**Prerequisite for both methods:** `python3` 3.9 or newer on your `PATH`. The
+skill runs a small Python script to search the corpus, so Python is needed at
+query time regardless of how you install. Nothing else — no third-party
+packages, no network, no Langflow checkout.
+
+Pick **one** of the two methods below, not both. See the note at the end for why.
+
+### Claude Code — install as a plugin (recommended)
+
+```
+/plugin marketplace add x1linwang/langflow-docs-skill
+/plugin install langflow-docs@langflow-docs-skill
+```
+
+Nothing to clone, and no shell script to run. Claude Code tells you at session
+start when a new version is available, and `/plugin` handles enable, disable,
+and uninstall.
+
+The skill is namespaced as `langflow-docs:langflow-1-11-docs`, but you do not
+need to type that — like any skill, it loads on its own when your question
+matches its description.
+
+### Codex CLI, opencode, or manual — install as files
+
+`/plugin` is a Claude Code feature; Codex CLI and opencode do not read
+`.claude-plugin/`. Everywhere else, use the script:
+
 ```bash
 git clone https://github.com/x1linwang/langflow-docs-skill.git
 cd langflow-docs-skill
 ./install.sh
 ```
 
-The script detects which agent CLIs you have and installs into each. Then start
-a new session and ask a Langflow question — the skill triggers on its own
-description, there is nothing to configure.
+It detects which agent CLIs you have and installs into each. Then start a new
+session and ask a Langflow question — there is nothing to configure.
 
 ```bash
 ./install.sh --list       # show what would happen, change nothing
@@ -52,8 +82,22 @@ description, there is nothing to configure.
 ./install.sh --uninstall  # remove it again
 ```
 
-Requirements: `python3` 3.9 or newer. No third-party packages, no network, no
-Langflow checkout. On Windows, run the installer in Git Bash or WSL.
+On Windows, run the installer in Git Bash or WSL.
+
+Updating a script install means pulling and re-running it, and nothing prompts
+you to. That notification is the main thing the plugin route adds.
+
+> **Why one method and not both.** A plugin skill is namespaced, so it coexists
+> with a plain `~/.claude/skills/` copy rather than replacing it. With both
+> installed you get two entries — `langflow-1-11-docs` and
+> `langflow-docs:langflow-1-11-docs`. Both work, and the duplicate description
+> costs only a couple of hundred tokens, so this is not urgent.
+>
+> The reason it matters is **version skew**: update the plugin and your older
+> script copy stays behind at the previous corpus. The agent may then answer from
+> a stale snapshot with nothing to signal that it is stale, which is the exact
+> failure this skill exists to prevent. If you already ran `install.sh` and want
+> the plugin, run `./install.sh --uninstall` first.
 
 ### Where it lands
 
@@ -156,8 +200,26 @@ Issues and PRs welcome, particularly:
 ```bash
 python3 scripts/regression.py       # 34-case retrieval check, literal vs expanded
 python3 scripts/quick_validate.py skills/langflow-1-11-docs
+claude plugin validate . --strict   # marketplace manifest
+claude plugin validate .claude-plugin/plugin.json --strict
 ./scripts/sync_corpus.sh 1.12.0     # re-vendor upstream docs, rebuild the index
 ```
+
+Note that `claude plugin validate .` checks only the *marketplace* manifest when
+both files are present, so validate `plugin.json` by path as well.
+
+### Cutting a release
+
+```bash
+# 1. bump "version" in .claude-plugin/plugin.json
+# 2. commit and push
+claude plugin tag                   # optional: langflow-docs--v<version> git tag
+```
+
+The version bump is not optional if you want anyone to receive the update.
+Because `version` is set in `plugin.json`, Claude Code pins to that string —
+push new commits without bumping it and existing users keep the cached copy
+indefinitely.
 
 `regression.py` is the guard on the synonym map. Query expansion trades
 precision for recall — an early version demoted `/structured-output` for the

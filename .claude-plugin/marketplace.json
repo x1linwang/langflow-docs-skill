@@ -1,0 +1,18 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "langflow-docs-skill",
+  "description": "Offline Langflow 1.11.x documentation for coding agents. Personal project, not an official Langflow marketplace.",
+  "owner": {
+    "name": "Xilin",
+    "url": "https://github.com/x1linwang"
+  },
+  "plugins": [
+    {
+      "name": "langflow-docs",
+      "source": "./",
+      "description": "Search the bundled Langflow 1.11.x documentation offline and cite exact pages, plus hand-written notes on custom components, flow JSON, and API auth.",
+      "category": "development",
+      "homepage": "https://github.com/x1linwang/langflow-docs-skill"
+    }
+  ]
+}

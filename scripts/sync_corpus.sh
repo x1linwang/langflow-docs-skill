@@ -85,5 +85,13 @@ python3 "$SKILL/docsearch.py" build
 
 echo
 echo "pages=$PAGES snippets=$SNIPPETS upstream=$SHA"
-echo "Now: run scripts/regression.py, review 'git diff --stat', and update"
-echo "SKILL.md if the version in its prose or routing table changed."
+echo
+echo "Next steps:"
+echo "  1. python3 scripts/regression.py    -- retrieval must not regress"
+echo "  2. review 'git diff --stat'"
+echo "  3. update SKILL.md if its prose version or routing table changed"
+echo "  4. BUMP \"version\" in .claude-plugin/plugin.json"
+echo
+echo "     Step 4 is not optional. version is pinned in plugin.json, so"
+echo "     pushing a new corpus without bumping it leaves every plugin user"
+echo "     on their cached copy -- they never see this update."
