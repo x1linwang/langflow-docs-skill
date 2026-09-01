@@ -1,0 +1,616 @@
+{
+  "_comment": "Query expansion for docsearch.py. Keys are what people type; values are the nouns the Langflow docs actually use. Single-word keys fire when that token appears in the query; multi-word keys fire when the phrase appears. Expansions are weighted below literal terms, so they widen recall without outranking an exact match. Add entries when a real query misses.",
+  "tool": [
+    "tool_mode",
+    "Toolset",
+    "Actions",
+    "agents-tools",
+    "tool description"
+  ],
+  "tools": [
+    "tool_mode",
+    "Toolset",
+    "Actions",
+    "agents-tools"
+  ],
+  "toolbox": [
+    "Toolset",
+    "tool_mode",
+    "Actions"
+  ],
+  "function calling": [
+    "tool_mode",
+    "Toolset",
+    "Actions",
+    "Agent"
+  ],
+  "sub agent": [
+    "Agent as a tool",
+    "Toolset",
+    "agents-tools"
+  ],
+  "subagent": [
+    "Agent as a tool",
+    "Toolset",
+    "agents-tools"
+  ],
+  "agent as tool": [
+    "Toolset",
+    "tool_mode",
+    "agents-tools"
+  ],
+  "multi agent": [
+    "Agent as a tool",
+    "Toolset",
+    "A2A",
+    "agents-tools"
+  ],
+  "orchestrator": [
+    "Agent",
+    "Toolset",
+    "Agent as a tool"
+  ],
+  "restrict": [
+    "Actions",
+    "tool_mode",
+    "Guardrails",
+    "Policies"
+  ],
+  "allowlist": [
+    "Actions",
+    "Policies",
+    "Guardrails"
+  ],
+  "custom component": [
+    "components-custom-components",
+    "Component class",
+    "Inputs",
+    "Outputs",
+    "build_config"
+  ],
+  "custom code": [
+    "components-custom-components",
+    "Component class"
+  ],
+  "my own component": [
+    "components-custom-components",
+    "custom components"
+  ],
+  "component not showing": [
+    "LANGFLOW_COMPONENTS_PATH",
+    "custom components",
+    "troubleshoot"
+  ],
+  "component missing": [
+    "LANGFLOW_COMPONENTS_PATH",
+    "custom components",
+    "troubleshoot"
+  ],
+  "input types": [
+    "MessageTextInput",
+    "MultilineInput",
+    "DropdownInput",
+    "HandleInput",
+    "DataInput",
+    "IntInput",
+    "BoolInput",
+    "SecretStrInput"
+  ],
+  "dependency": [
+    "install-custom-dependencies",
+    "uv pip install",
+    "requirements"
+  ],
+  "dependencies": [
+    "install-custom-dependencies",
+    "custom dependencies"
+  ],
+  "pip install": [
+    "install-custom-dependencies",
+    "custom dependencies"
+  ],
+  "external package": [
+    "install-custom-dependencies",
+    "custom dependencies"
+  ],
+  "third party library": [
+    "install-custom-dependencies",
+    "custom dependencies"
+  ],
+  "import error": [
+    "install-custom-dependencies",
+    "troubleshoot",
+    "custom dependencies"
+  ],
+  "secret": [
+    "configuration-global-variables",
+    "global variables",
+    "SecretStrInput",
+    "environment-variables",
+    "credentials"
+  ],
+  "secrets": [
+    "global variables",
+    "environment-variables",
+    "SecretStrInput"
+  ],
+  "api key": [
+    "api-keys-and-authentication",
+    "x-api-key",
+    "LANGFLOW_API_KEY",
+    "global variables"
+  ],
+  "credential": [
+    "global variables",
+    "api-keys-and-authentication",
+    "SecretStrInput"
+  ],
+  "password": [
+    "LANGFLOW_SUPERUSER_PASSWORD",
+    "api-keys-and-authentication",
+    "authentication"
+  ],
+  "login": [
+    "LANGFLOW_AUTO_LOGIN",
+    "api-keys-and-authentication",
+    "authentication-overview"
+  ],
+  "auth": [
+    "api-keys-and-authentication",
+    "authentication-overview",
+    "authorization",
+    "external-authentication"
+  ],
+  "sso": [
+    "external-authentication",
+    "authentication-overview"
+  ],
+  "oauth": [
+    "external-authentication",
+    "authentication-overview"
+  ],
+  "permission": [
+    "authorization",
+    "Policies",
+    "api-keys-and-authentication"
+  ],
+  "env var": [
+    "environment-variables",
+    "LANGFLOW_"
+  ],
+  "memory": [
+    "Message History",
+    "session-id",
+    "memory-bases",
+    "Memory Base",
+    "chat memory"
+  ],
+  "chat history": [
+    "Message History",
+    "session-id",
+    "memory"
+  ],
+  "conversation": [
+    "Message History",
+    "session-id",
+    "chat memory"
+  ],
+  "remember": [
+    "Message History",
+    "memory-bases",
+    "session-id"
+  ],
+  "forget": [
+    "session-id",
+    "Message History",
+    "memory"
+  ],
+  "context window": [
+    "Message History",
+    "memory",
+    "Language Model"
+  ],
+  "vector db": [
+    "vector store",
+    "knowledge",
+    "Knowledge Base",
+    "embeddings"
+  ],
+  "vector database": [
+    "vector store",
+    "knowledge",
+    "Knowledge Base"
+  ],
+  "rag": [
+    "chat-with-rag",
+    "vector store",
+    "knowledge",
+    "Embedding Model",
+    "Split Text"
+  ],
+  "embedding": [
+    "Embedding Model",
+    "components-embedding-models",
+    "vector store"
+  ],
+  "chunking": [
+    "Split Text",
+    "chunk_size",
+    "chunk_overlap"
+  ],
+  "retrieval": [
+    "vector store",
+    "knowledge",
+    "Search",
+    "rag"
+  ],
+  "ingest": [
+    "File Processing",
+    "Split Text",
+    "knowledge",
+    "concepts-file-management"
+  ],
+  "upload": [
+    "concepts-file-management",
+    "api-files",
+    "File Processing"
+  ],
+  "trigger": [
+    "concepts-publish",
+    "webhook",
+    "api-flows-run",
+    "run flow"
+  ],
+  "call my flow": [
+    "api-flows-run",
+    "concepts-publish",
+    "run flow",
+    "x-api-key"
+  ],
+  "run flow": [
+    "api-flows-run",
+    "/api/v1/run",
+    "concepts-publish",
+    "Run Flow"
+  ],
+  "webhook": [
+    "component-webhook",
+    "webhook",
+    "concepts-publish",
+    "api-flows-run"
+  ],
+  "http": [
+    "api-flows-run",
+    "API Request",
+    "api-reference-api-examples"
+  ],
+  "curl": [
+    "api-flows-run",
+    "api-reference-api-examples",
+    "x-api-key"
+  ],
+  "endpoint": [
+    "api-flows-run",
+    "endpoint_name",
+    "concepts-publish"
+  ],
+  "stream": [
+    "stream",
+    "api-flows-run",
+    "streaming"
+  ],
+  "streaming": [
+    "stream=true",
+    "api-flows-run",
+    "token responses"
+  ],
+  "embed": [
+    "concepts-publish",
+    "chat widget",
+    "api-flows-run"
+  ],
+  "widget": [
+    "concepts-publish",
+    "chat widget"
+  ],
+  "typescript": [
+    "typescript-client",
+    "javascript"
+  ],
+  "javascript": [
+    "typescript-client",
+    "api-flows-run"
+  ],
+  "python client": [
+    "api-reference-api-examples",
+    "api-flows-run",
+    "requests"
+  ],
+  "mcp": [
+    "mcp-server",
+    "mcp-client",
+    "MCP Tools",
+    "streamable"
+  ],
+  "mcp server": [
+    "mcp-server",
+    "streamable",
+    "MCP Tools"
+  ],
+  "mcp client": [
+    "mcp-client",
+    "MCP Tools"
+  ],
+  "a2a": [
+    "a2a-server",
+    "A2A Agent"
+  ],
+  "deploy": [
+    "deployment-overview",
+    "deployment-docker",
+    "deployment-kubernetes-prod"
+  ],
+  "docker": [
+    "deployment-docker",
+    "develop-application",
+    "Dockerfile"
+  ],
+  "kubernetes": [
+    "deployment-kubernetes-prod",
+    "helm"
+  ],
+  "k8s": [
+    "deployment-kubernetes-prod",
+    "deployment-kubernetes-dev",
+    "helm"
+  ],
+  "production": [
+    "deployment-prod-best-practices",
+    "deployment-kubernetes-prod",
+    "deployment-multi-worker"
+  ],
+  "scale": [
+    "deployment-multi-worker",
+    "deployment-prod-best-practices",
+    "workers"
+  ],
+  "postgres": [
+    "configuration-custom-database",
+    "enterprise-database-guide",
+    "LANGFLOW_DATABASE_URL"
+  ],
+  "database": [
+    "configuration-custom-database",
+    "enterprise-database-guide",
+    "LANGFLOW_DATABASE_URL",
+    "migrations"
+  ],
+  "sqlite": [
+    "configuration-custom-database",
+    "LANGFLOW_DATABASE_URL",
+    "langflow.db"
+  ],
+  "backup": [
+    "configuration-custom-database",
+    "enterprise-database-guide"
+  ],
+  "https": [
+    "deployment-nginx-ssl",
+    "deployment-caddyfile",
+    "deployment-public-server"
+  ],
+  "reverse proxy": [
+    "deployment-nginx-ssl",
+    "deployment-caddyfile"
+  ],
+  "error": [
+    "troubleshoot",
+    "logging",
+    "traces"
+  ],
+  "broken": [
+    "troubleshoot",
+    "logging"
+  ],
+  "not working": [
+    "troubleshoot",
+    "logging"
+  ],
+  "fails": [
+    "troubleshoot",
+    "logging"
+  ],
+  "debug": [
+    "troubleshoot",
+    "logging",
+    "traces",
+    "LANGFLOW_LOG_LEVEL"
+  ],
+  "slow": [
+    "troubleshoot",
+    "deployment-multi-worker",
+    "lfx-prewarm"
+  ],
+  "timeout": [
+    "troubleshoot",
+    "environment-variables",
+    "timeout"
+  ],
+  "crash": [
+    "troubleshoot",
+    "logging"
+  ],
+  "log": [
+    "logging",
+    "LANGFLOW_LOG_LEVEL",
+    "api-logs"
+  ],
+  "monitoring": [
+    "traces",
+    "logging",
+    "api-monitor",
+    "observability-grafana-loki"
+  ],
+  "observability": [
+    "traces",
+    "integrations-langsmith",
+    "integrations-langfuse",
+    "observability-grafana-loki"
+  ],
+  "export": [
+    "concepts-flows-import",
+    "flow JSON"
+  ],
+  "import": [
+    "concepts-flows-import",
+    "flow JSON"
+  ],
+  "flow json": [
+    "concepts-flows-import",
+    "api-flows",
+    "flow JSON"
+  ],
+  "version control": [
+    "concepts-flows-import",
+    "flow-devops-sdk"
+  ],
+  "ci cd": [
+    "flow-devops-sdk",
+    "concepts-flows-import"
+  ],
+  "loop": [
+    "Loop",
+    "batch-run",
+    "Batch Run"
+  ],
+  "conditional": [
+    "If-Else",
+    "Smart Router",
+    "smart-router"
+  ],
+  "branch": [
+    "If-Else",
+    "Smart Router"
+  ],
+  "router": [
+    "Smart Router",
+    "If-Else",
+    "llm-selector"
+  ],
+  "json output": [
+    "Structured Output",
+    "structured-output",
+    "data-types"
+  ],
+  "dataframe": [
+    "data-types",
+    "DataFrame",
+    "operations"
+  ],
+  "type error": [
+    "data-types",
+    "Type Convert",
+    "troubleshoot"
+  ],
+  "prompt": [
+    "Prompt Template",
+    "components-prompts",
+    "escape curly braces"
+  ],
+  "curly braces": [
+    "Prompt Template",
+    "escape",
+    "components-prompts"
+  ],
+  "llm": [
+    "Language Model",
+    "components-models",
+    "llm-selector"
+  ],
+  "human approval": [
+    "Human-in-the-Loop",
+    "human-in-the-loop",
+    "Human Input"
+  ],
+  "approval": [
+    "Human-in-the-Loop",
+    "Human Input",
+    "Policies"
+  ],
+  "file system": [
+    "File System",
+    "LANGFLOW_FS_TOOL_BASE_DIR",
+    "Read File",
+    "Write File"
+  ],
+  "sandbox": [
+    "LANGFLOW_FS_TOOL_BASE_DIR",
+    "File System",
+    "deployment-block-custom-components"
+  ],
+  "bundle": [
+    "components-bundle-components",
+    "bundles",
+    "extensions-overview"
+  ],
+  "extension": [
+    "extensions-overview",
+    "extensions-manifest",
+    "extensions-quickstart"
+  ],
+  "cli": [
+    "configuration-cli",
+    "langflow run",
+    "lfx-run"
+  ],
+  "upgrade": [
+    "get-started-installation",
+    "release-notes",
+    "migrations"
+  ],
+  "legacy": [
+    "legacy-core-components",
+    "release-notes"
+  ],
+  "deprecated": [
+    "legacy-core-components",
+    "release-notes"
+  ],
+  "package": [
+    "install-custom-dependencies",
+    "custom dependencies",
+    "uv pip install"
+  ],
+  "library": [
+    "install-custom-dependencies",
+    "custom dependencies"
+  ],
+  "module": [
+    "install-custom-dependencies",
+    "custom components",
+    "imports"
+  ],
+  "appear": [
+    "LANGFLOW_COMPONENTS_PATH",
+    "custom components",
+    "troubleshoot"
+  ],
+  "menu": [
+    "concepts-components",
+    "LANGFLOW_COMPONENTS_PATH",
+    "custom components"
+  ],
+  "sidebar": [
+    "concepts-components",
+    "components menu"
+  ],
+  "turns": [
+    "session-id",
+    "Message History",
+    "memory"
+  ],
+  "json": [
+    "Structured Output",
+    "data-types"
+  ]
+}

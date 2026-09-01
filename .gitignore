@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+# Indexes for corpora reached via --docs-root are machine-local. The bundled
+# index (index/corpus.idx.json.gz) IS committed on purpose: shipping it is what
+# lets a fresh install work with no writes, which some agents require.
+skills/*/index/external-*.json.gz

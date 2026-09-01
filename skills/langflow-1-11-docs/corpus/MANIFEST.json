@@ -1,0 +1,14 @@
+{
+  "langflow_docs_version": "1.11.0",
+  "covers": "the entire Langflow 1.11.x line (Langflow cuts doc versions per minor, not per patch)",
+  "upstream_repo": "https://github.com/langflow-ai/langflow",
+  "upstream_path": "docs/versioned_docs/version-1.11.0",
+  "upstream_commit": "c3bfdb7d03deb3ce43c1f81505f545e9aaffac43",
+  "upstream_commit_date": "2026-08-19T02:12:18Z",
+  "vendored_on": "2026-09-01T17:52:51Z",
+  "pages": 246,
+  "code_snippets": 256,
+  "license": "MIT",
+  "excluded_from_upstream": ["*.png", "*.zip", ".DS_Store", ".gitignore"],
+  "added_by_us": ["_sidebar.json (copied from docs/versioned_sidebars/version-1.11.0-sidebars.json)"]
+}
