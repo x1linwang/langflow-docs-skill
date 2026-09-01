@@ -62,6 +62,14 @@ The skill is namespaced as `langflow-docs:langflow-1-11-docs`, but you do not
 need to type that — like any skill, it loads on its own when your question
 matches its description.
 
+The first time it searches, Claude Code asks permission to run `python3`. Approve
+it; the skill cannot search the corpus otherwise. To skip the prompt in a project
+you use often, add this to its `.claude/settings.json`:
+
+```json
+{ "permissions": { "allow": ["Bash(python3 *)"] } }
+```
+
 ### Codex CLI, opencode, or manual — install as files
 
 `/plugin` is a Claude Code feature; Codex CLI and opencode do not read
