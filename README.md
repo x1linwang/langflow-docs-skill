@@ -37,7 +37,7 @@ search before answering.
 ## Install
 
 ```bash
-git clone https://github.com/<you>/langflow-docs-skill.git
+git clone https://github.com/x1linwang/langflow-docs-skill.git
 cd langflow-docs-skill
 ./install.sh
 ```
